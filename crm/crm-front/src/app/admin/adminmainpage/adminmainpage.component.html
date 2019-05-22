@@ -1,0 +1,99 @@
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark default-color-dark fixed-top">
+      <a class="navbar-brand">DataRetainers</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              
+              <li class="nav-item">
+                  <a class="nav-link" href="/agentregister">Register New Agent</a>
+              </li>
+          </ul>
+           <ul class="navbar-nav ml-auto nav-flex-icons">
+            
+                  
+              <li class="nav-item avatar dropdown">
+                    <a class="nav-link waves-effect waves-light dropdown-toggle
+                    "id="admin_attention_dropdown"data-toggle="dropdown"aria-haspopup="true" aria-expanded="false" [ngClass]="{
+                      'adminfocus': isAdminAttentionStatus
+                    }">Admin Attention</a>  
+                    <div class="dropdown-menu dropdown-menu-right dropdown-purple" aria-labelledby="navbarDropdownMenuLink-5">
+                            <a class="dropdown-item whov
+                            "(click)="onRequestPrice()"><ng-container *ngIf="isAdminAttentionStatus"><i class="fas fa-circle"></i></ng-container>Request Price</a>
+                        <a (click)="onOtherRequest()" class="dropdown-item whov
+                        "><ng-container *ngIf="isOtherAttentionStatus"><i class="fas fa-circle"></i></ng-container>Others Request</a>
+                    </div>
+                </li>
+                   
+                
+
+                      
+             
+              
+              <li class="nav-item avatar dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../assets/images/userimage.png" class="img-fluid rounded-circle z-depth-0" width="30"></a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-purple" aria-labelledby="navbarDropdownMenuLink-5">
+                      <a class="dropdown-item whov"><i class="fa fa-plus"></i>{{username}}</a>
+                      <a class="dropdown-item whov"(click)="onLogoutClick()" ><i class="fa fa-edit"></i>LogOut</a>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  </header>
+  <ng-container *ngIf="isAdminAttentionBlock">
+        <div class="block">
+             <div class="innerblock"*ngFor="let adminattention of adminattentiondata">
+                 <table class="innerblocktable">
+                     <tr class="adminattention_tr">
+                         <td class="adminattention_td">Case ID : {{adminattention.userid}}</td>
+                        
+                         <td class="adminattention_td">Agent : {{adminattention.agentname}}</td>
+                     </tr>
+                     <tr class="adminattention_tr">
+                             <td colspan="2" class="adminattention_td">Status : {{adminattention.adminattentionstatus}}</td>
+                            
+                   </tr>
+                   <tr class="adminattention_tr">
+                         <td colspan="2" class="adminattention_td">Comment : {{adminattention.adminattentioncomment}}</td>
+                         
+               </tr>
+               <tr class="adminattention_tr">
+                   
+                     <td colspan="2" class="adminattention_td">
+                         <button  class="btn btn-primary createquotesbutton"type="submit"(click)="adminAttentionCreateQuotes(adminattention.userid)">Create Quotes</button>
+                     </td>
+           </tr>
+                 </table>
+             </div>
+         </div>
+     </ng-container>  
+
+     <ng-container *ngIf="isOthersAttentionBlock">
+            <div class="block">
+                 <div class="innerblock"*ngFor="let otherattention of otherattentiondata">
+                     <table class="innerblocktable">
+                         <tr class="adminattention_tr">
+                             <td class="adminattention_td">Case ID : {{otherattention.userid}}</td>
+                            
+                             <td class="adminattention_td">Agent : {{otherattention.agentname}}</td>
+                         </tr>
+                        
+                       <tr class="adminattention_tr">
+                             <td colspan="2" class="adminattention_td">Comment : {{otherattention.othersattentioncomment	}}</td>
+                             
+                   </tr>
+                   <tr class="adminattention_tr">
+                        <td colspan="2" class="adminattention_td">
+                                <button  class="btn btn-primary createquotesbutton"type="submit"(click)="removerOtherAttention(otherattention.userid)">Request Resolve</button>
+                            </td>
+                       
+               </tr>
+                     </table>
+                 </div>
+             </div>
+         </ng-container>  
+  <app-main-page></app-main-page>
+  

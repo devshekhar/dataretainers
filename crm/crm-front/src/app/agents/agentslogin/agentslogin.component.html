@@ -1,0 +1,47 @@
+
+    <div class="container">
+   
+        <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+                <img src="https://www.dataretainers.com/images/data_logo.png" class="img-responsive companylogo" alt="" />
+           <h2>Agent Login</h2>
+           <div class="row show-hide-message">
+            <div [ngClass]="messageClass">
+              {{message}}
+            </div>
+          </div>
+           </div>
+            <form [formGroup]="form"(submit)="onLoginSubmit()" novalidate>
+        
+                   
+        
+         
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Username" name="username" formControlName="username">
+  
+                  <ul class="help-block">
+                    <li class="danger-error" *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">Username is Required</li>
+                  </ul>
+  
+            
+                
+      
+        
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password"name="password" formControlName="password">
+  
+                    <ul class="help-block">
+                      <li class="danger-error"*ngIf="form.controls.password.errors?.required && form.controls.password.dirty"> Password is Required</li>
+                    </ul>  
+  
+         
+                
+                <button  [disabled]='!form.valid || processing'type="submit" class="btn btn-primary">Login</button>
+        
+            </form>
+            </div>
+       
+        </div></div>   
+        
+        
+       
+    

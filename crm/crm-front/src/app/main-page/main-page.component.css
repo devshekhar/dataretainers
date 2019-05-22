@@ -1,0 +1,34 @@
+/*main table styling */
+
+#maindata {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#maindata td, #maindata th {
+    border: 1px solid #ddd;
+    padding: 4px;
+    font-size: 11px !important;
+}
+
+#maindata tr:nth-child(even){background-color: #f2f2f2;}
+
+#maindata tr:hover {background-color: #ddd;}
+
+#maindata th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+td.tabletd {
+    width: 15%;
+}
+/*search box styling */
+input#myInput {
+    padding: 5px;
+    border-radius: 5px;
+}
+

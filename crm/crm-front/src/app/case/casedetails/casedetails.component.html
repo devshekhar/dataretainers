@@ -1,0 +1,602 @@
+<div class="row show-hide-message">
+    <div [ngClass]="agentInfoClass">{{caseMessage}}</div>
+    </div>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark default-color-dark fixed-top">
+      <a class="navbar-brand"><img src="https://www.dataretainers.com/images/data_logo.png" class="img-responsive logoimage"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              
+              <li class="nav-item">
+                
+              </li>
+          </ul>
+           <ul class="navbar-nav ml-auto nav-flex-icons">
+              <li class="nav-item">
+                 
+              </li>
+              <li class="nav-item">
+                 
+              </li>
+              <li class="nav-item">
+                 
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" role="button"id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png" class="img-fluid rounded-circle z-depth-0" width="30"></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-5">
+                      <a class="dropdown-item whov"><i class="fa fa-user"></i>{{currentusername| uppercase}}</a>
+                      <a href="#"class="dropdown-item whov"(click)="onLogoutClick()" ><i class="fas fa-sign-out-alt"></i>LogOut</a>
+                  </div>
+              </li>
+           
+          </ul>
+      </div>
+  </nav>
+  </header>
+
+<!------ Include the above in your HEAD tag ---------->
+
+         
+                <div class="jumbotron">
+                    <div class="case-header">
+                <div class="row">
+                    <div class="col-md-6">
+                       <p class="info-left"> Case No:{{newcasedata.caseno}}</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <p class="info-right"> Agent:{{newcasedata.agent | uppercase}}</p>
+                     </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                       <p class="info-left info"> <span class="title">Case Manager: </span><span class="newcaseedit"> <click-to-edit field="casemanager" [value]="newcasedata.casemanager" (onSave)="showValue($event)"></click-to-edit></span></p>
+                       <p class="info-left info"> <span class="title">Time :</span>{{newcasedata.date_time | date:'medium'}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="info-right info"> <span class="title11">Engineer: </span><span class="newcaseedit11"> <click-to-edit field="engineer" [value]="newcasedata.engineer" (onSave)="showValue($event)"></click-to-edit></span></p>
+                     
+                        <p class="info-right info"> <span class="title11">Status:</span>{{newcasedata.status}}</p>
+                     </div>
+                </div>
+            </div>
+                <hr class="bottom-border">
+                <div class="row rowspace">
+                    <h2 class="maintitle">Customer's Contact Information</h2>
+                    <p class="info-left info firstinfo"> <span class="title1">Name: </span><span class="newcaseedit1 firstedit"> <click-to-edit field="firstname" [value]="newcasedata.firstname |uppercase" (onSave)="showValue($event)"></click-to-edit></span> 
+                        <span class="lastname"> <click-to-edit field="lastname" [value]="newcasedata.lastname |uppercase" (onSave)="showValue($event)"></click-to-edit></span></p>
+                    <p class="info-left info"> <span class="title1">Phone Number: </span><span class="newcaseedit1"> <click-to-edit field="phone" [value]="newcasedata.phone|uppercase" (onSave)="showValue($event)"></click-to-edit></span></p>
+
+                    <p class="info-left info"> <span class="title1">Email: </span><span class="newcaseedit1"> <click-to-edit field="email" [value]="newcasedata.email" (onSave)="showValue($event)"></click-to-edit></span></p>
+                     <p class="info-left info"><span class="title1">Address:</span>
+                        <span class="title3">Street: </span>
+                        <span class="newcaseedit3"> <click-to-edit field="street" [value]="newcasedata.street" (onSave)="showValue($event)"></click-to-edit></span>
+                        <span class="title4">City: </span>
+                        <span class="newcaseedit4"> <click-to-edit field="city" [value]="newcasedata.city" (onSave)="showValue($event)"></click-to-edit></span>
+                        <span class="title4">State: </span>
+                        <span class="newcaseedit4"> <click-to-edit field="state" [value]="newcasedata.state" (onSave)="showValue($event)"></click-to-edit></span>
+                        <span class="title4">Zip: </span>
+                        <span class="newcaseedit4"> <click-to-edit field="zip" [value]="newcasedata.zip" (onSave)="showValue($event)"></click-to-edit></span>
+                        <span class="title4">Country: </span>
+                        <span class="newcaseedit4"> <click-to-edit field="country" [value]="newcasedata.country" (onSave)="showValue($event)"></click-to-edit></span>
+                    </p>
+                </div>
+                <hr class="bottom-border">
+                <div class="row rowspace">
+                        <div class="col-md-6 mediafirstcol">
+                    <h2 class="maintitle">Media Information</h2>
+               
+                        <p class="info-left info"> <span class="title2">Device Type: </span><span class="newcaseedit1"> <click-to-edit field="device_type" [value]="mediainformation.device_type" (onSave)="showValue($event)"></click-to-edit></span></p>
+                  
+                    <p class="info-left info"> <span class="title2">Device Manufacturer: </span><span class="newcaseedit1"> <click-to-edit field="device_manufacturer" [value]="mediainformation.device_manufacturer" (onSave)="showValue($event)"></click-to-edit></span></p>
+
+                    <p class="info-left info"> <span class="title2">Device Capacity: </span><span class="newcaseedit1"> <click-to-edit field="device_capacity" [value]="mediainformation.device_capacity" (onSave)="showValue($event)"></click-to-edit></span></p>
+
+                    <p class="info-left info"> <span class="title2">Device Model: </span><span class="newcaseedit1"> <click-to-edit field="device_model" [value]="mediainformation.device_model" (onSave)="showValue($event)"></click-to-edit></span></p>
+
+                    <p class="info-left info"> <span class="title2">Serial Number: </span><span class="newcaseedit1"> <click-to-edit field="device_serialno" [value]="mediainformation.device_serialno" (onSave)="showValue($event)"></click-to-edit></span></p>
+
+                    </div>
+                    <div class="col-md-6 mediasecondcol">
+                  <p class="info-left info info2"> <span class="title2">Cause Of Failure: </span><span class="newcaseedit1"> <click-to-edit  field="cnn_failure" [value]="mediainformation.cnn_failure" (onSave)="showValue($event)"></click-to-edit></span></p>
+
+                    <p class="info-left info info2"> <span class="title2">Recovery Attempts that have been made: </span><span class="newcaseedit1"> <click-to-edit field="recovery_attempts" [value]="mediainformation.recovery_attempts" (onSave)="showValue($event)"></click-to-edit></span></p>
+
+                    <p class="info-left info info2"> <span class="title2">Most Important File Folder: </span><span class="newcaseedit1"> <click-to-edit field="file_folder" [value]="mediainformation.file_folder" (onSave)="showValue($event)"></click-to-edit></span></p>
+                    </div>
+                    </div>
+                    <hr class="bottom-border">
+                    <ng-container *ngIf="quotes?.length>0">
+                    <h2 class="maintitle">Service Quotes </h2>
+                    
+                    <table class="table table-striped">
+                            <thead>
+                              <tr>
+                             <!-- <th>ID</th>
+                                <th>Quotes Plan</th>--> 
+                                <th>Serial Number</th>
+                                <th>Service</th>
+                                <th>List Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                               
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let quote of quotes"class="quotestr">
+                           <!--    <td>{{quote.id}}</td>
+                                <td>{{quote.quotesplan}}</td>--> 
+                                <td>{{quote.serialnumber}}</td>
+                                <td>{{quote.service}}</td>
+                                <td>{{quote.listprice}}</td>
+                                <td>{{quote.quantity}}</td>
+                               
+                                <td>{{quote.total}}</td>
+                               
+                                <td *ngIf="currentusertype=='admin'"><a data-toggle="modal" data-target="#pricequotemodaledit" class="btn btn-primary"(click)="onEditQuote(quote.quotesid)">Edit</a></td>
+          <td *ngIf="currentusertype=='admin'"><a  (click)="onDeleteQuote(quote)" class="btn btn-danger">Delete</a></td>
+   
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                     <h2 class="downpaymenth2">Down-payment:</h2> 
+                      <p class="downpaymentp"*ngFor="let quote of quotes|slice:0:1; let i=index">{{quote.downpayment}}  <a *ngIf="currentusertype=='admin'"data-toggle="modal"data-target="#pricequotemodaledit"class="btn btn-primary"(click)="onEditDownpayment(quotes)">Edit</a></p>  
+                   
+                      <h2 class="backupdriveh2">Backup Drive</h2>
+                      <table class="table table-striped">
+                            <thead>
+                              <tr>
+                             <!-- <th>ID</th>
+                                <th>Quotes Plan</th>--> 
+                                <th>Drive Size</th>
+                                <th>Basic Price</th>
+                                <th>Drive Quantity</th>
+                                <th>Drive Cost</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="quotestr"*ngFor="let quote of quotes |slice:0:1; let i=index">
+                           <!--    <td>{{quote.id}}</td>
+                                <td>{{quote.quotesplan}}</td>--> 
+                                <td>{{quote.drivesize}}</td>
+                                <td>{{quote.basicdriveprice}}</td>
+                                <td>{{quote.drivequantity}}</td>
+                                <td>{{quote.drivetotalprice}}</td>
+                               
+                                
+                                <td *ngIf="currentusertype=='admin'"><a data-toggle="modal" data-target="#pricequotemodaledit" class="btn btn-primary"(click)="onEditBackupDrive(quotes)">Edit</a></td>
+         
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                          <h2 class="backupdriveh2">Shipping</h2>
+                      <table class="table table-striped">
+                            <thead>
+                              <tr>
+                             <!-- <th>ID</th>
+                                <th>Quotes Plan</th>--> 
+                                <th>Shipping Type</th>
+                                <th>Shipping Cost</th>
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="quotestr"*ngFor="let quote of quotes |slice:0:1; let i=index">
+                           <!--    <td>{{quote.id}}</td>
+                                <td>{{quote.quotesplan}}</td>--> 
+                                <td>{{quote.shippingtype}}</td>
+                                <td>{{quote.shippingcost}}</td>
+                               
+                               
+                                
+                                <td *ngIf="currentusertype=='admin'"><a data-toggle="modal" data-target="#pricequotemodaledit" class="btn btn-primary"(click)="onEditShipping(quotes)">Edit</a></td>
+         
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                         
+                          <div class="finaldivblock"*ngIf="currentusertype=='admin'">
+                          <div class="finalpayment">
+                              <h2 class="finalpaymenth2">Final Payment <a data-toggle="modal" data-target="#pricequotemodaledit"class="btn btn-primary"(click)="onEditFinaPayment(quotes)">Edit</a></h2>
+                              <div class="block">
+                                  <table class="finalpaymenttable">
+                                      <tr class="finalpaymentr">
+                                      <th class="finalpaymenth">Sr. No</th>
+                                      <th class="finalpaymenth">Description</th>
+                                      <th class="finalpaymenth">Amount</th>
+                                    
+                                    </tr>
+                                    <tr class="finalpaymentr"*ngFor="let quote of quotes|slice:0:1; let i=index">
+                                            <td class="finalpaymentd">1</td>
+                                            <td class="finalpaymentd">Subtotal</td>
+                                            <td class="finalpaymentd">{{quote.total}}</td>
+                                    </tr>
+                                    <tr class="finalpaymentr"*ngFor="let quote of quotes|slice:0:1; let i=index">
+                                            <td class="finalpaymentd">2</td>
+                                            <td class="finalpaymentd">Downpayment</td>
+                                            <td class="finalpaymentd">{{quote.downpayment}}</td>
+                                    </tr>
+                                    <tr class="finalpaymentr"*ngFor="let quote of quotes|slice:0:1; let i=index">
+                                            <td class="finalpaymentd">3</td>
+                                            <td class="finalpaymentd">Backup Drive</td>
+                                            <td class="finalpaymentd">{{quote.drivetotalprice}}</td>
+                                    </tr>
+                                    <tr class="finalpaymentr"*ngFor="let quote of quotes|slice:0:1; let i=index">
+                                            <td class="finalpaymentd">4</td>
+                                            <td class="finalpaymentd">Shipping Charge</td>
+                                            <td class="finalpaymentd">{{quote.shippingcost}}</td>
+                                    </tr>
+                                    <tr class="finalpaymentr"*ngFor="let quote of quotes|slice:0:1; let i=index">
+                                            <td class="finalpaymentd">5</td>
+                                            <td class="finalpaymentd">Others</td>
+                                            <td class="finalpaymentd">{{quote.otherscost}}</td>
+                                    </tr>
+                                    <tr class="finalpaymentr"*ngFor="let quote of quotes|slice:0:1; let i=index">
+                                            <td class="finalpaymentd">6</td>
+                                            <td class="finalpaymentd">Tax</td>
+                                            <td class="finalpaymentd">{{quote.taxcost}}</td>
+                                    </tr>
+                                    <tr class="finalpaymentrborder"*ngFor="let quote of quotes|slice:0:1; let i=index">
+                                            <td></td>
+                                            <td class="finalpaymentd">Total</td>
+                                            <td class="finalpaymentd">{{quote.overallcost}}</td>
+                                    </tr>
+                                  </table>
+                              </div>
+                          </div>
+                          </div>
+                          </ng-container>
+                          <p class="quotesp"><i class="fas fa-plus-square" style="margin-right:10px;"></i><a  href="#"data-toggle="modal" data-target="#pricequotemodal" class="quotesa">Add Quotes</a></p>
+            <hr class="bottom-border">
+         
+            <!-- Example single danger button -->
+<div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Update 
+        </button>
+        <div class="dropdown-menu updatedropdown">
+          <a class="dropdown-item updatedropdownitem" (click)="updateWall()">Update Wall</a>
+          <a class="dropdown-item updatedropdownitem" (click)="selfAlert()">Self Alert</a>
+          <a class="dropdown-item updatedropdownitem"data-toggle="modal"data-target="#adminattentionblock"(click)="onAdminAttention()">Admin Attention</a>
+          <a class="dropdown-item updatedropdownitem" href="#">Request update from Technician</a>
+          <a class="dropdown-item updatedropdownitem" href="#">Request update from Sales</a>
+          <a class="dropdown-item updatedropdownitem" href="#">Advised Unsuccessful</a>
+          <a class="dropdown-item updatedropdownitem" href="#">Remove from me</a>
+          <a class="dropdown-item updatedropdownitem" href="#">Shipping Label</a>
+          <a class="dropdown-item updatedropdownitem" href="#">Request Pickup</a>
+        </div>
+      </div> 
+      <div class="updatewall">
+          <form [formGroup]="commentform"(submit)="onCommentSubmit()" *ngIf="updatewall">
+         <textarea class="form-control" id="casecomment" name="casecomment"formControlName="casecomment"placeholder="Add Comment"></textarea>
+         <label>Add Reminder</label><input type="checkbox" (change)="changeCheckbox($event)" formControlName="chechkvalue">
+         <div class="reminderdate"*ngIf="checkvalue">
+         <input type="datetime-local"name="casedate" formControlName="casedate"/>
+        </div>
+        <button [disabled]="commentdisable" type="submit" class="btn btn-primary">Comment</button>
+        </form>
+        <table class="table table-striped">
+            <thead>
+<tr class="commentdata">
+<th>Comment</th>
+<th>Comment Time</th>
+<th>Reminder Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="commentdata"*ngFor="let comment of commentdata">
+         <td class="commentval"><p >{{comment.remindercomment}}</p></td>
+         <td class="commentime">  <p >{{comment.commenttime}}</p></td>
+            <td class="remindertime"><p >{{comment.remindertime}}</p></td>
+           
+        </tr>
+    </tbody>
+        </table>
+      </div>
+      <div class="updatewall" *ngIf="selfalert">
+        <form [formGroup]="selfalertform"(submit)="onAddAlert()">
+            <textarea class="form-control" id="alertcomment" name="alertcomment"formControlName="alertcomment"placeholder="Add Self Alert Comment"></textarea>
+            <label>Add Reminder</label><input type="checkbox" (change)="changeCheckbox($event)" formControlName="chechkvalue">
+            <div class="reminderdate"*ngIf="checkvalue">
+            <input type="datetime-local"name="casedate" formControlName="selfalertdate"/>
+           </div>
+           
+           <button [disabled]="commentdisable" type="submit" class="btn btn-primary">Add Alert</button>
+           </form>
+           <table class="table table-striped">
+            <thead>
+<tr class="commentdata">
+<th>Self Alert</th>
+<th>Self Alert Time</th>
+<th>Reminder Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="commentdata">
+         <td class="commentval"><p >{{selfalertdata.self_alert_comment}}</p></td>
+         <td class="commentime">  <p >{{selfalertdata.self_alert_time|date:'medium'}}</p></td>
+            <td class="remindertime"><p >{{selfalertdata.self_alert_remindertime|date:'medium'}}</p></td>
+            <td><a data-toggle="modal" data-target="#pricequotemodaledit" class="btn btn-primary"(click)="onEditQuote(selfalert.alertid)">Edit</a></td>
+            <td><a  (click)="onDeleteQuote(selfalert)" class="btn btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+        </table>
+         </div>
+
+        <div id="adminattentionblock"class="modal fade"role="dialog"*ngIf="isadminattention">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <p class="attenionmessage">{{adminattentionmessage}}</p>
+                    <form class="adminattentionform"[formGroup]="adminattentionform"(submit)="onAdminAttentionFormSubmit()">
+                            <div class="form-group">
+                            <label for="attentiontype">Attention Type</label>
+                            <select (change)="onAttentioTypeChange($event.target.value)"class="form-control"id="attentiontype" name="attentiontype" formControlName="attentiontype">
+                                <option value="requestprice">Request Price</option>
+                                <option value="othersattention">Others</option>
+                               
+                            </select>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="serialnumber"> Comment</label>
+                            <textarea class="form-control" id="adminattentioncomment" name="adminattentioncomment"formControlName="adminattentioncomment"placeholder="Add Admin Attention "></textarea>
+                        </div>
+                        <input [disabled]='!adminattentionform.valid'type="submit" class="btn btn-success"value="Send">
+                        <button hidden="hidden" class="fa fa-close" data-dismiss="modal" id="closeBtn" ></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+<div id="pricequotemodal" class="modal fade"role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="quotesform"[formGroup]="quotesform" (submit)="onQuoteSubmit()">
+                <div class="form-group">
+                <label for="quotesplan">Quotes For</label>
+                <select (change)="onQuotesPlanChange($event.target.value)"class="form-control"id="quotesplan" name="quotesplan" formControlName="quotesplan">
+                    <option value="serviceplan">Service Plan</option>
+                    <option *ngIf="currentusertype=='admin'"value="downpayment">Down Payment</option>
+                    <option *ngIf="currentusertype=='admin'"value="finalpayment">Final Payment</option>
+                    <option value="backupdrive">Backup Drive</option>
+                    <option value="shipping">Shipping</option>
+                    <option value="otherquotes">Others</option>
+                </select>
+            </div>
+            <ng-container *ngIf="serviceplanQuotes">
+            <div class="form-group">
+                <label for="serialnumber">Serial Number</label>
+                <input type="text" class="form-control"formControlName="serialnumber"name="serialnumber" id="serialnumber">
+            </div>
+            <div class="form-group">
+                <label  for="service">Service </label>
+                <input type="text"class="form-control"formControlName="service"name="service"id="service">
+            </div>
+            <div class="form-group">
+                <label for="listprice">List Price</label>
+                <input type="number" class="form-control"formControlName="listprice"name="listprice"id="listprice">
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number"class="form-control"formControlName="quantity"name="quantity"id="quantity">
+            </div>
+           
+            <div class="form-group">
+                <label for="total">Total</label>
+                <input type="number"class="form-control"formControlName="total"id="total">
+            </div>
+        </ng-container>
+        <ng-container *ngIf="downpayementQuotes">
+        <div class="form-group">
+            <label for ="downpayment">Downpayment</label>
+            <input type="number"class="form-control"formControlName="downpayment"id="downpayment">
+        </div>
+        </ng-container>
+        <ng-container *ngIf="backupDriveQuotes">
+            <div class="form-group">
+       <label for="drivesize">Drive Size</label>
+      <select class="form-control"id="drivesize"formControlName="drivesize"name="drivesize">
+          <option value="250 GB">250 GB</option>
+          <option value="500 GB">500 GB</option>
+          <option value="1000 GB">1000 GB</option>
+          <option value="2000 GB">2000 GB</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="drivequantity">Quantity</label>
+        <input type="number" class="form-control" name="drivequantity"formControlName="drivequantity">
+        </div>
+    <div class="form-group">
+        <label for="basicdriveprice">Drive Price</label>
+        <input type="number"class="form-control"name="basicdriveprice"formControlName="basicdriveprice">
+
+    </div>
+    <div class="form-group">
+        <label for="drivetotalprice">Drive Cost</label>
+        <input type="number"class="form-control"name="drivetotalprice"formControlName="drivetotalprice">
+    </div>
+            </ng-container>
+
+            <ng-container *ngIf="shippingQuotes">
+                <div class="form-group">
+                    <label for="shippingtype">Shipping Type</label>
+                    <select class="form-control"name="shippingtype"formControlName="shippingtype">
+                        <option value="Normal">Normal</option>
+                        <option value="FedEx First Overnight">FedEx First Overnight</option>
+                        <option value="FedEx Express Saver">FedEx Express Saver</option>
+                        <option value="FedEx 2Day Service">FedEx 2Day Saver</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                        <label for="shippingcost">Shipping Cost</label>
+                        <input type="text"class="form-control"name="shippingcost"formControlName="shippingcost">
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="finalQuotes">
+                        <div class="form-group">
+                                <label for="total">Subtotal</label>
+                                <input type="text"class="form-control"formControlName="total"id="total" >
+                            </div>
+
+                            <div class="form-group">
+                                    <label for ="downpayment">Downpayment</label>
+                                    <input type="number"class="form-control"formControlName="downpayment"id="downpayment">
+                                </div>
+                                <div class="form-group">
+                                        <label for="drivetotalprice">Drive Cost</label>
+                                        <input type="number"class="form-control"name="drivetotalprice"formControlName="drivetotalprice">
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="shippingcost">Shipping Cost</label>
+                                            <input type="text"class="form-control"name="shippingcost"formControlName="shippingcost">
+                                        </div>
+                    <div class="form-group">
+                    <label for="otherscost">Others Cost</label>
+                    <input type="number"class="form-control"id="otherscost"name="otherscost"formControlName="otherscost">
+                </div>
+                <div class="form-group">
+                    <label for="taxcost">Tax</label>
+                    <input type="number" class="form-control"id="taxcost"name="taxcost"formControlName="taxcost">
+                </div>
+                <div class="form-group">
+                    <label for="overallcost">Total Cost</label>
+                    <input type="number"class="form-control"id="overallcost"name="overallcost"formControlName="overallcost">
+                </div>
+                </ng-container>
+            <input type="submit" class="btn btn-success"value="Generate Quotes">
+          <!--  <button [disabled]="commentdisable" type="submit" class="btn btn-primary">Add Alert</button> -->
+            </form>
+        </div>
+    </div>
+</div>
+<div id="pricequotemodaledit" class="modal fade"role="dialog" *ngIf="editformvalue">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="editquotesform"[formGroup]="editquotesform" (submit)="onEditQuoteSubmit()">
+                <div class="form-group">
+                <label for="quotesplan">Quotes For</label>
+                <select (change)="onQuotesPlanChange($event.target.value)" class="form-control"id="quotesplan" name="quotesplan" formControlName="quotesplan">
+                    <option value="serviceplan">Service Plan</option>
+                    <option *ngIf="currentusertype=='admin'" value="downpayment">Down Payment</option>
+                    <option  *ngIf="currentusertype=='admin'" value="finalpayment">Final Payment</option>
+                    <option value="backupdrive">Backup Drive</option>
+                    <option value="shipping">Shipping</option>
+                    <option value="otherquotes">Others</option>
+                </select>
+                
+            </div>
+           <ng-container *ngIf="serviceplanQuotes">
+            <div class="form-group">
+                <label for="serialnumber">Serial Number</label>
+                <input type="text" class="form-control"formControlName="serialnumber"name="serialnumber" id="serialnumber" >
+            </div>
+
+            <div class="form-group">
+                <label  for="service">Service </label>
+                <input type="text"class="form-control"formControlName="service"name="service"id="service" >
+            </div>
+            <div class="form-group">
+                <label for="listprice">List Price</label>
+                <input type="text" class="form-control"formControlName="listprice"name="listprice"id="listprice" >
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="text"class="form-control"formControlName="quantity"name="quantity"id="quantity">
+            </div>
+       
+            <div class="form-group">
+                <label for="total">Total</label>
+                <input type="text"class="form-control"formControlName="total"id="total" >
+            </div>
+        </ng-container>
+        <ng-container *ngIf="downpayementQuotes">
+            <div class="form-group">
+                <label for ="downpayment">Down-payment</label>
+                <input type="number"class="form-control"formControlName="downpayment"id="downpayment">
+            </div>
+            </ng-container>
+            <ng-container *ngIf="backupDriveQuotes">
+                    <div class="form-group">
+               <label for="drivesize">Drive Size</label>
+              <select class="form-control"id="drivesize"formControlName="drivesize"name="drivesize">
+                  <option value="250 GB">250 GB</option>
+                  <option value="500 GB">500 GB</option>
+                  <option value="1000 GB">1000 GB</option>
+                  <option value="2000 GB">2000 GB</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="drivequantity">Quantity</label>
+                <input type="number" class="form-control" name="drivequantity"formControlName="drivequantity">
+                </div>
+            <div class="form-group">
+                <label for="basicdriveprice">Drive Price</label>
+                <input type="number"class="form-control"name="basicdriveprice"formControlName="basicdriveprice">
+        
+            </div>
+            <div class="form-group">
+                <label for="drivetotalprice">Drive Cost</label>
+                <input type="number"class="form-control"name="drivetotalprice"formControlName="drivetotalprice">
+            </div>
+                    </ng-container>
+                    <ng-container *ngIf="shippingQuotes">
+                            <div class="form-group">
+                                <label for="shippingtype">Shipping Type</label>
+                                <select class="form-control"name="shippingtype"formControlName="shippingtype">
+                                    <option value="Normal">Normal</option>
+                                    <option value="FedEx First Overnight">FedEx First Overnight</option>
+                                    <option value="FedEx Express Saver">FedEx Express Saver</option>
+                                    <option value="FedEx 2Day Service">FedEx 2Day Saver</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                    <label for="shippingcost">Shipping Cost</label>
+                                    <input type="text"class="form-control"name="shippingcost"formControlName="shippingcost">
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="finalQuotes">
+                                    <div class="form-group">
+                                            <label for="total">Subtotal</label>
+                                            <input type="text"class="form-control"formControlName="total"id="total" >
+                                        </div>
+
+                                        <div class="form-group">
+                                                <label for ="downpayment">Downpayment</label>
+                                                <input type="number"class="form-control"formControlName="downpayment"id="downpayment">
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="drivetotalprice">Drive Cost</label>
+                                                    <input type="number"class="form-control"name="drivetotalprice"formControlName="drivetotalprice">
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="shippingcost">Shipping Cost</label>
+                                                        <input type="text"class="form-control"name="shippingcost"formControlName="shippingcost">
+                                                    </div>
+                                <div class="form-group">
+                                <label for="otherscost">Others Cost</label>
+                                <input type="number"class="form-control"id="otherscost"name="otherscost"formControlName="otherscost">
+                            </div>
+                            <div class="form-group">
+                                <label for="taxcost">Tax</label>
+                                <input type="number" class="form-control"id="taxcost"name="taxcost"formControlName="taxcost">
+                            </div>
+                            <div class="form-group">
+                                <label for="overallcost">Total Cost</label>
+                                <input type="number"class="form-control"id="overallcost"name="overallcost"formControlName="overallcost">
+                            </div>
+                            </ng-container>
+            <input type="submit" class="btn btn-success"value="Edit Quotes">
+          <!--  <button [disabled]="commentdisable" type="submit" class="btn btn-primary">Add Alert</button> -->
+        
+            </form>
+         
+        </div>
+    </div>
+</div>

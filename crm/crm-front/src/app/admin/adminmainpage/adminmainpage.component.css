@@ -1,0 +1,94 @@
+.whov:hover { background-color: #2d3e58!important; }
+.view {
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 500px;
+}
+.secondbase {
+    background-color: rgba(255,255,255,.6); 
+    margin-top: -90px;
+}
+ul.navbar-nav.ml-auto.nav-flex-icons {
+    float: right;
+}
+.default-color-dark{
+    background: #17c4bb !important;
+}
+a#navbarDropdownMenuLink-5 {
+    line-height: 47px;
+    margin-left: 20px;
+}
+
+a.nav-link.waves-effect.waves-light {
+    line-height: 50px;
+font-size: 14px;
+color: white !important;
+height: 66px;
+}
+.adminattention {
+    float: right;
+    right: 112px !important;
+}
+a.dropdown-item.whov {
+    margin-right: 13px;
+    font-size: 12px;
+}
+i.fas.fa-circle {
+    margin-right: 5px;
+    color: #f92c2c;
+}
+i.fa.fa-plus {
+    margin-right: 5px;
+}
+i.fa.fa-edit {
+    margin-right: 5px;
+}
+.block {
+    
+    width: 22%;
+    top: 80px;
+    padding: 5px;
+    border: rgb(50, 189, 207) solid 1px;
+    overflow: auto;
+    max-height: 350px;
+    position: fixed;
+    right: 27px;
+    background: #17a2b8;
+    color:white;     
+ 
+}
+.innerblock {
+    
+    padding: 5px;
+}
+table.innerblocktable {
+    width: 100%;
+    padding: 5px;
+    
+    background:#489efa;
+}
+tr.adminattention_tr {
+    height: 22px;
+    font-size: 13px;
+    padding: 2px;
+}
+td.adminattention_td {
+padding-left: 5px;
+}
+
+.adminfocus{
+    animation:blinkingText 0.5s infinite;
+}
+.adminfocus:hover{
+    animation:blinkingText 0s infinite;
+}
+@keyframes blinkingText{
+    0%{     color:red; }
+    49%{    opacity: 0.7;color:red; }
+    50%{    color: red; }
+    99%{    opacity: 0.7;color:red;  }
+    100%{   color:red; }
+}
+.createquotesbutton {
+    margin-bottom: 5px;
+}

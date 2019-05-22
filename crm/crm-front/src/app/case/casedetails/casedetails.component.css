@@ -1,0 +1,288 @@
+ul.navbar-nav.ml-auto.nav-flex-icons {
+    float: right;
+}
+
+.details li {
+    list-style: none;
+  }
+  li {
+      margin-bottom:10px;
+  }
+ .tital{
+     text-align:right;
+ }
+ .contant_i{
+      color: #631e1e;
+      border-bottom: 1px solid #cea7a7;
+ }
+ p.info-left {
+    font-size: 20px;
+}
+.jumbotron {
+    padding: 15px !important;
+    font-size: 16px !important;
+    margin-top: 50px;
+    background: aqua;
+}
+p.info-right {
+    float: right;
+    font-size: 20px;
+}
+p.info-left.info {
+    font-size: 16px;
+}
+p.info-left.info {
+    width: 100%;
+}
+span.title {
+    width: 22%;
+    float: left;
+}
+.info {
+    font-size: 16px !important;
+}
+p.info-right.info {
+    width: 34%;
+    float: right;
+}
+
+hr.bottom-border {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid;
+}
+h2.maintitle {
+    font-size: 18px;
+    display: initial;
+    border-bottom: 1px solid;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.row.rowspace {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+}
+span.title1 {
+    width: 12%;
+    float: left;
+    font-size: 16px;
+}
+span.title2[_ngcontent-c1] {
+    width: 35%;
+    float: left;
+    font-size: 16px;
+}
+p.info-left.info[_ngcontent-c1] {
+    width: 100%;
+    margin: 2px;
+}
+.col-md-6.mediafirstcol {
+    padding: 0px !important;
+}
+p.info-left.info.info2 {
+    display: inline-block;
+}
+.col-md-6.mediasecondcol {
+    margin-top: 25px;
+}
+span.newcaseedit1.firstedit {
+    width: 15%;
+    float: left;
+}
+span.title11 {
+    width: 42%;
+    float: left;
+    font-weight: 700;
+    font-size: 14px !important;
+}
+span.title2 {
+    font-weight: 700;
+    font-size: 14px !important;
+}
+.click-to-edit-value{
+    font-size: 15px;
+}
+span.title1 {
+    font-weight: 700;
+    font-size: 14px !important;
+}
+span.title {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+p.quotesp {
+    font-size: 15px;
+}
+a.quotesa {
+    text-decoration:none;
+    color: black;
+    font-weight: 500;
+}
+i.fas.fa-times-circle {
+    color: red;
+    margin-right: 4px;
+    font-size: 12px;
+}
+i.fas.fa-check{
+    color: green;
+    margin-right: 4px;
+    font-size: 12px;   
+}
+/*update area */
+textarea#casecomment {
+    width: 40%;
+   
+    margin-right: 20px;
+}
+input[type="datetime-local"]{
+    line-height: 26px;
+    
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 15px;
+    
+}
+label {
+    font-size: 13px;
+    margin-right: 12px;
+    margin-left: 6px;
+}
+[type=checkbox]{
+    position: inherit;
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 18px;
+}
+td.commentval p {
+    font-size: 16px;
+}
+td.commentime p {
+    font-size: 16px;
+}
+td.remindertime p {
+    font-size: 16px;
+}
+/*css for quotes modal */
+.modal-dialog {
+    top: 20%;
+    left: -18%;
+}
+
+select.form-control {
+    -webkit-appearance: menulist;
+}
+span.title3 {
+    font-weight: 500;
+    float: left;
+    width: 6%;
+    font-size: 14px;
+}
+span.title4 {
+    font-weight: 500;
+    float: left;
+    width: 6%;
+    font-size: 14px;
+    margin-left: 12%;
+}
+
+.dropdown-menu.updatedropdown.show {
+    margin-left: 30px;
+    /* color: white; */
+    background: white;
+}
+
+a.dropdown-item.updatedropdownitem {
+    color: black;
+}
+.modal-dialog {
+    width: 30% !important;
+}
+.modal-content {
+    padding: 25px;
+}
+.quotestr td {
+    padding: 1px !important;
+    font-size: 14px;
+    padding-left:8px !important;
+}
+.commentdata td {
+    padding: 2px !important;
+    font-size:14px;
+}
+.commentdata p {
+    margin-bottom: 0px !important;
+}
+h2.downpaymenth2 {
+    font-size: 18px;
+    display: initial;
+    border-bottom: 1px solid;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.downpaymenth2 span {
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 12px;
+}
+h2.backupdriveh2 {
+    font-size: 18px;
+    display: initial;
+    border-bottom: 1px solid;
+    font-weight: 700;
+    margin-top: 15px;
+}
+p.downpaymentp {
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 6px;
+    
+}
+.finalpayment {
+    border: 2px solid #d0fdff;
+    box-shadow: 1px 1px 1px #d2fbf7;
+}
+
+h2.finalpaymenth2 {
+    text-align: center;
+    background: azure;
+    line-height: 35px;
+    height: 35px;
+    font-size: 18px;
+}
+th.finalpaymenth {
+    width: 131px;
+    text-align: center;
+}
+tr.finalpaymentr {
+    text-align: center;
+    /* width: 165px; */
+}
+.finaldivblock {
+    height: 220px;
+}
+.finalpayment {
+    width: 29%;
+    float: right;
+    margin-right: 5%;
+}
+tr.finalpaymentrborder {
+    text-align: center;
+    border-top: 2px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px !important;
+    background: white;
+}
+
+p.attenionmessage {
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    
+    border-radius: 5px;
+}

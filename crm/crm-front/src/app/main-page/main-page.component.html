@@ -1,0 +1,34 @@
+<div class="input-group input-group-sm searchbox" style="margin-bottom: 10px;">
+  <input name="search"[(ngModel)]="search" value="" class="form-control searchinput" placeholder="Search" autofocus>
+  <div class="input-group-btn "> 
+    
+  </div>
+</div>
+<div class='row'>
+<div class="panel panel-default">
+<!-- Default panel contents -->
+<div class='panel-body'>
+  <table class="table table-bordered table-condensed " id="maindata">
+     <thead>
+      <td>Case No</td>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Agents</td>
+      <td>Status</td>
+      <td>Service</td>
+     </thead>
+     <tbody class="maindatabody">
+      <tr *ngFor="let list of lists|filter:search |paginate: { itemsPerPage: 20, currentPage: p } ">
+        <td><a 
+          href="/caseinfo/{{list.id}}" (click)="getCustomerDetailsByID(id)">{{list.caseno}}</a></td>
+        <td class="tabletd">{{list.firstname |lowercase}} {{list.lastname |lowercase}}</td>
+        <td  class="tabletd">{{list.phone}}</td>
+        <td  class="tabletd">{{list.agent}}</td>
+        <td  class="tabletd">{{list.status}}</td>
+        <td  class="tabletd">{{list.service}}</td>
+      </tr>
+      
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </tbody>
+  </table>
+ 
